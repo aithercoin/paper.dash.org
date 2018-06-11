@@ -5293,7 +5293,7 @@ Bitcoin.Address = function (bytes) {
 	this.version = Bitcoin.Address.networkVersion;
 };
 
-Bitcoin.Address.networkVersion = 0x4C; // mainnet
+Bitcoin.Address.networkVersion = 0x17; // mainnet
 
 /**
 * Serialize this object as a standard Bitcoin address.
@@ -5744,7 +5744,7 @@ Bitcoin.ECKey = (function () {
 		KeyPool.push(this);
 	};
 
-	ECKey.privateKeyPrefix = 0xCC; // mainnet 0xCC    testnet 0xEF
+	ECKey.privateKeyPrefix = 0Xc6; // mainnet 0Xc6    testnet 0xf0
 
 	/**
 	* Whether public keys should be returned compressed by default.
@@ -5933,16 +5933,16 @@ Bitcoin.ECKey = (function () {
 	// 51 characters base58, always starts with a '7'
 	ECKey.isWalletImportFormat = function (key) {
 		key = key.toString();
-		return (ECKey.privateKeyPrefix == 0xCC) ?
-							(/^7[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key)) :
+		return (ECKey.privateKeyPrefix == 0xc6) ?
+							(/^5[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key)) :
 							(/^9[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key));
 	};
 
 	// 52 characters base58
 	ECKey.isCompressedWalletImportFormat = function (key) {
 		key = key.toString();
-		return (ECKey.privateKeyPrefix == 0xCC) ?
-							(/^W[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
+		return (ECKey.privateKeyPrefix == 0xc6) ?
+							(/^A[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
 							(/^c[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key));
 	};
 
@@ -6437,7 +6437,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #singlesafety { text-align: left; padding: 5px; border-top: 2px solid #0077ba; top: -25px; position: relative; }
 
 #main { position: relative; text-align: center; margin: 0px auto; width: 1008px; }
-#logo { width: 578px; height: 80px; }
+#logo { width: 78px; height: 80px; }
 		
 #paperarea { min-height: 120px; display: none; }
 #paperarea .keyarea { border: 2px solid #0077ba; border-top: 0; }
@@ -11488,8 +11488,8 @@ if (ninja.getQueryString()["testnet"] == "true" || ninja.getQueryString()["testn
 	document.getElementById("testnet").style.display = "block";
 	document.getElementById("detailwifprefix").innerHTML = "'9'";
 	document.getElementById("detailcompwifprefix").innerHTML = "'c'";
-	Bitcoin.Address.networkVersion = 0x6F; // testnet
-	Bitcoin.ECKey.privateKeyPrefix = 0xEF; // testnet
+	Bitcoin.Address.networkVersion = 0x19; // testnet
+	Bitcoin.ECKey.privateKeyPrefix = 0xf0; // testnet
 	ninja.testnetMode = true;
 }
 if (ninja.getQueryString()["showseedpool"] == "true" || ninja.getQueryString()["showseedpool"] == "1") {
