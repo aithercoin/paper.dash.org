@@ -1,7 +1,7 @@
-paper.dash.org
-JavaScript Client-Side Dash Wallet Generator
+address.aithercoin.com
+JavaScript Client-Side Aither Wallet Generator
 
-Now Dash addresses and their corresponding private key can be conveniently 
+Now Aither addresses and their corresponding private key can be conveniently
 generated in a web browser.
 
 
@@ -36,10 +36,10 @@ END USER NOTES:
 
 Notice of Copyrights and Licenses:
 ---------------------------------------
-The paper.dash.org project, software and embedded resources are
-copyright The Dash Developers.
+The address.aithercoin.com project, software and embedded resources are
+copyright The Aither Developers.
 
-The paper.dash.org, Dash name and logo are not part of the open source
+The address.aithercoin.com, Aither name and logo are not part of the open source
 license.
 
 The bitaddress.org project, software and embedded resources are
