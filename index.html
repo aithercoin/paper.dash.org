@@ -10,10 +10,10 @@
 
 	The address.aithercoin.com, Aither name and logo are not part of the open source license.
 
-	The bitaddress.org project, software and embedded resources are copyright bitaddress.org (pointbiz). 
+	The bitaddress.org project, software and embedded resources are copyright bitaddress.org (pointbiz).
 	The bitaddress.org name and logo are not part of the open source license.
 
-	Portions of the all-in-one HTML document contain JavaScript codes that are the copyrights of others. 
+	Portions of the all-in-one HTML document contain JavaScript codes that are the copyrights of others.
 	The individual copyrights are included throughout the document along with their licenses.
 	Included JavaScript libraries are separated with HTML script tags.
 
@@ -32,19 +32,19 @@
 	The bitaddress.org software is available under The MIT License (MIT)
 	Copyright (c) 2011-2013 bitaddress.org (pointbiz)
 
-	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
-	associated documentation files (the "Software"), to deal in the Software without restriction, including 
-	without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-	sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject 
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+	associated documentation files (the "Software"), to deal in the Software without restriction, including
+	without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+	sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject
 	to the following conditions:
 
-	The above copyright notice and this permission notice shall be included in all copies or substantial 
+	The above copyright notice and this permission notice shall be included in all copies or substantial
 	portions of the Software.
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
-	LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
-	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+	LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 	GitHub Repository: https://github.com/pointbiz/bitaddress.org
@@ -56,59 +56,59 @@
 
 	<script type="text/javascript">
 // Array.prototype.map function is in the public domain.
-// Production steps of ECMA-262, Edition 5, 15.4.4.19  
-// Reference: http://es5.github.com/#x15.4.4.19  
+// Production steps of ECMA-262, Edition 5, 15.4.4.19
+// Reference: http://es5.github.com/#x15.4.4.19
 if (!Array.prototype.map) {
 	Array.prototype.map = function (callback, thisArg) {
 		var T, A, k;
 		if (this == null) {
 			throw new TypeError(" this is null or not defined");
 		}
-		// 1. Let O be the result of calling ToObject passing the |this| value as the argument.  
+		// 1. Let O be the result of calling ToObject passing the |this| value as the argument.
 		var O = Object(this);
-		// 2. Let lenValue be the result of calling the Get internal method of O with the argument "length".  
-		// 3. Let len be ToUint32(lenValue).  
+		// 2. Let lenValue be the result of calling the Get internal method of O with the argument "length".
+		// 3. Let len be ToUint32(lenValue).
 		var len = O.length >>> 0;
-		// 4. If IsCallable(callback) is false, throw a TypeError exception.  
-		// See: http://es5.github.com/#x9.11  
+		// 4. If IsCallable(callback) is false, throw a TypeError exception.
+		// See: http://es5.github.com/#x9.11
 		if ({}.toString.call(callback) != "[object Function]") {
 			throw new TypeError(callback + " is not a function");
 		}
-		// 5. If thisArg was supplied, let T be thisArg; else let T be undefined.  
+		// 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
 		if (thisArg) {
 			T = thisArg;
 		}
-		// 6. Let A be a new array created as if by the expression new Array(len) where Array is  
-		// the standard built-in constructor with that name and len is the value of len.  
+		// 6. Let A be a new array created as if by the expression new Array(len) where Array is
+		// the standard built-in constructor with that name and len is the value of len.
 		A = new Array(len);
-		// 7. Let k be 0  
+		// 7. Let k be 0
 		k = 0;
-		// 8. Repeat, while k < len  
+		// 8. Repeat, while k < len
 		while (k < len) {
 			var kValue, mappedValue;
-			// a. Let Pk be ToString(k).  
-			//   This is implicit for LHS operands of the in operator  
-			// b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.  
-			//   This step can be combined with c  
-			// c. If kPresent is true, then  
+			// a. Let Pk be ToString(k).
+			//   This is implicit for LHS operands of the in operator
+			// b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.
+			//   This step can be combined with c
+			// c. If kPresent is true, then
 			if (k in O) {
-				// i. Let kValue be the result of calling the Get internal method of O with argument Pk.  
+				// i. Let kValue be the result of calling the Get internal method of O with argument Pk.
 				kValue = O[k];
-				// ii. Let mappedValue be the result of calling the Call internal method of callback  
-				// with T as the this value and argument list containing kValue, k, and O.  
+				// ii. Let mappedValue be the result of calling the Call internal method of callback
+				// with T as the this value and argument list containing kValue, k, and O.
 				mappedValue = callback.call(T, kValue, k, O);
-				// iii. Call the DefineOwnProperty internal method of A with arguments  
-				// Pk, Property Descriptor {Value: mappedValue, Writable: true, Enumerable: true, Configurable: true},  
-				// and false.  
-				// In browsers that support Object.defineProperty, use the following:  
-				// Object.defineProperty(A, Pk, { value: mappedValue, writable: true, enumerable: true, configurable: true });  
-				// For best browser support, use the following:  
+				// iii. Call the DefineOwnProperty internal method of A with arguments
+				// Pk, Property Descriptor {Value: mappedValue, Writable: true, Enumerable: true, Configurable: true},
+				// and false.
+				// In browsers that support Object.defineProperty, use the following:
+				// Object.defineProperty(A, Pk, { value: mappedValue, writable: true, enumerable: true, configurable: true });
+				// For best browser support, use the following:
 				A[k] = mappedValue;
 			}
-			// d. Increase k by 1.  
+			// d. Increase k by 1.
 			k++;
 		}
-		// 9. return A  
+		// 9. return A
 		return A;
 	};
 }
@@ -262,7 +262,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 		};
 
 	})();
-}	
+}
 	</script>
 	<script type="text/javascript">
 /*!
@@ -399,7 +399,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 
 	SHA256._digestsize = 32;
 
-})();	
+})();
 	</script>
 	<script type="text/javascript">
 /*!
@@ -455,7 +455,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 
 	};
 
-})(); 
+})();
 	</script>
 	<script type="text/javascript">
 /*!
@@ -607,7 +607,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 			// Allow mode to override options
 			if (mode.fixOptions) mode.fixOptions(options);
 
-			var 
+			var
 
 			// Convert to bytes if message is a string
 		m = (
@@ -648,7 +648,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 			// Allow mode to override options
 			if (mode.fixOptions) mode.fixOptions(options);
 
-			var 
+			var
 
 			// Convert to bytes if ciphertext is a string
 		c = (
@@ -1090,9 +1090,9 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 
 	/**
 	* Electronic Code Book mode.
-	* 
+	*
 	* ECB applies the cipher directly against each block of the input.
-	* 
+	*
 	* ECB does not require an initialization vector.
 	*/
 	var ECB = C_mode.ECB = function () {
@@ -1127,7 +1127,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 
 	/**
 	* Cipher block chaining
-	* 
+	*
 	* The first block is XORed with the IV. Subsequent blocks are XOR with the
 	* previous cipher output.
 	*/
@@ -1181,11 +1181,11 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 
 	/**
 	* Cipher feed back
-	* 
+	*
 	* The cipher output is XORed with the plain text to produce the cipher output,
 	* which is then fed back into the cipher to produce a bit pattern to XOR the
 	* next block with.
-	* 
+	*
 	* This is a stream cipher mode and does not require padding.
 	*/
 	var CFB = C_mode.CFB = function () {
@@ -1233,10 +1233,10 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 
 	/**
 	* Output feed back
-	* 
+	*
 	* The cipher repeatedly encrypts its own output. The output is XORed with the
 	* plain text to produce the cipher text.
-	* 
+	*
 	* This is a stream cipher mode and does not require padding.
 	*/
 	var OFB = C_mode.OFB = function () {
@@ -1492,11 +1492,11 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 	<script type="text/javascript">
 /*!
 * Random number generator with ArcFour PRNG
-* 
+*
 * NOTE: For best results, put code like
 * <body onclick='SecureRandom.seedTime();' onkeypress='SecureRandom.seedTime();'>
 * in your main HTML document.
-* 
+*
 * Copyright Tom Wu, bitaddress.org  BSD License.
 * http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE
 */
@@ -1683,7 +1683,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 * Basic Javascript Elliptic Curve implementation
 * Ported loosely from BouncyCastle's Java EC code
 * Only Fp curves implemented for now
-* 
+*
 * Copyright Tom Wu, bitaddress.org  BSD License.
 * http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE
 */
@@ -1744,7 +1744,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 	/**
 	* return a sqrt root - the routine verifies that the calculation
 	* returns the right value - if none exists it returns null.
-	* 
+	*
 	* Copyright (c) 2000 - 2011 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)
 	* Ported to JavaScript by bitaddress.org
 	*/
@@ -2033,7 +2033,7 @@ if (typeof Crypto == "undefined" || !Crypto.util) {
 		var len = 32; // integerToBytes will zero pad if integer is less than 32 bytes. 32 bytes length is required by the Bitcoin protocol.
 		var enc = ec.integerToBytes(x, len);
 
-		// when compressed prepend byte depending if y point is even or odd 
+		// when compressed prepend byte depending if y point is even or odd
 		if (compressed) {
 			if (y.isEven()) {
 				enc.unshift(0x02);
@@ -2356,15 +2356,15 @@ var defaults = {
 	radix: 16, // work with HEX by default
 	minBits: 3,
 	maxBits: 20, // this permits 1,048,575 shares, though going this high is NOT recommended in JS!
-	
+
 	bytesPerChar: 2,
 	maxBytesPerChar: 6, // Math.pow(256,7) > Math.pow(2,53)
-		
+
 	// Primitive polynomials (in decimal form) for Galois Fields GF(2^n), for 2 <= n <= 30
 	// The index of each term in the array corresponds to the n for that polynomial
 	// i.e. to get the polynomial for n=16, use primitivePolynomials[16]
 	primitivePolynomials: [null,null,1,3,3,5,3,3,29,17,9,5,83,27,43,3,45,9,39,39,9,5,3,33,27,9,71,39,9,5,83],
-	
+
 	// warning for insecure PRNG
 	warning: 'WARNING:\nA secure random number generator was not found.\nUsing Math.random(), which is NOT cryptographically strong!'
 };
@@ -2384,13 +2384,13 @@ function init(bits){
 	if(bits && (typeof bits !== 'number' || bits%1 !== 0 || bits<defaults.minBits || bits>defaults.maxBits)){
 		throw new Error('Number of bits must be an integer between ' + defaults.minBits + ' and ' + defaults.maxBits + ', inclusive.')
 	}
-	
+
 	config.radix = defaults.radix;
 	config.bits = bits || defaults.bits;
 	config.size = Math.pow(2, config.bits);
 	config.max = config.size - 1;
-	
-	// Construct the exp and log tables for multiplication.	
+
+	// Construct the exp and log tables for multiplication.
 	var logs = [], exps = [], x = 1, primitive = defaults.primitivePolynomials[config.bits];
 	for(var i=0; i<config.size; i++){
 		exps[i] = x;
@@ -2401,7 +2401,7 @@ function init(bits){
 			x &= config.max;
 		}
 	}
-		
+
 	config.logs = logs;
 	config.exps = exps;
 };
@@ -2420,7 +2420,7 @@ function isInited(){
 // which should output a random string of 1's and 0's of length `bits`
 function getRNG(){
 	var randomBits, crypto;
-	
+
 	function construct(bits, arr, radix, size){
 		var str = '',
 			i = 0,
@@ -2436,20 +2436,20 @@ function getRNG(){
 			return str;
 		}
 	}
-	
+
 	// node.js crypto.randomBytes()
 	if(typeof require === 'function' && (crypto=require('crypto')) && (randomBits=crypto['randomBytes'])){
 		return function(bits){
 			var bytes = Math.ceil(bits/8),
 				str = null;
-		
+
 			while( str === null ){
 				str = construct(bits, randomBits(bytes).toString('hex'), 16, 4);
 			}
 			return str;
 		}
 	}
-	
+
 	// browsers with window.crypto.getRandomValues()
 	if(global['crypto'] && typeof global['crypto']['getRandomValues'] === 'function' && typeof global['Uint32Array'] === 'function'){
 		crypto = global['crypto'];
@@ -2462,8 +2462,8 @@ function getRNG(){
 				crypto['getRandomValues'](arr);
 				str = construct(bits, arr, 10, 32);
 			}
-			
-			return str;	
+
+			return str;
 		}
 	}
 
@@ -2471,7 +2471,7 @@ function getRNG(){
 	// Will produce a warning every time it is called.
 	config.unsafePRNG = true;
 	warn();
-	
+
 	var bitsPerNum = 32;
 	var max = Math.pow(2,bitsPerNum)-1;
 	return function(bits){
@@ -2479,7 +2479,7 @@ function getRNG(){
 		var arr = [], str=null;
 		while(str===null){
 			for(var i=0; i<elems; i++){
-				arr[i] = Math.floor(Math.random() * max + 1); 
+				arr[i] = Math.floor(Math.random() * max + 1);
 			}
 			str = construct(bits, arr, 10, bitsPerNum);
 		}
@@ -2504,7 +2504,7 @@ exports.setRNG = function(rng, alert){
 	}
 	config.unsafePRNG=false;
 	rng = rng || getRNG();
-	
+
 	// test the RNG (5 times)
 	if(typeof rng !== 'function' || typeof rng(config.bits) !== 'string' || !parseInt(rng(config.bits),2) || rng(config.bits).length > config.bits || rng(config.bits).length < config.bits){
 		throw new Error("Random number generator is invalid. Supply an RNG of the form function(bits){} that returns a string containing 'bits' number of random 1's and 0's.")
@@ -2512,12 +2512,12 @@ exports.setRNG = function(rng, alert){
 		config.rng = rng;
 	}
 	config.alert = !!alert;
-	
+
 	return !!config.unsafePRNG;
 };
 
 function isSetRNG(){
-	return typeof config.rng === 'function'; 
+	return typeof config.rng === 'function';
 };
 
 // Generates a random bits-length number string using the PRNG
@@ -2526,20 +2526,20 @@ exports.random = function(bits){
 	if(!isSetRNG()){
 		this.setRNG();
 	}
-	
+
 	if(typeof bits !== 'number' || bits%1 !== 0 || bits < 2){
 		throw new Error('Number of bits must be an integer greater than 1.')
 	}
-	
+
 	if(config.unsafePRNG){
 		warn();
 	}
 	return bin2hex(config.rng(bits));
 }
 
-// Divides a `secret` number String str expressed in radix `inputRadix` (optional, default 16) 
-// into `numShares` shares, each expressed in radix `outputRadix` (optional, default to `inputRadix`), 
-// requiring `threshold` number of shares to reconstruct the secret. 
+// Divides a `secret` number String str expressed in radix `inputRadix` (optional, default 16)
+// into `numShares` shares, each expressed in radix `outputRadix` (optional, default to `inputRadix`),
+// requiring `threshold` number of shares to reconstruct the secret.
 // Optionally, zero-pads the secret to a length that is a multiple of padLength before sharing.
 /** @expose **/
 exports.share = function(secret, numShares, threshold, padLength, withoutPrefix){
@@ -2549,9 +2549,9 @@ exports.share = function(secret, numShares, threshold, padLength, withoutPrefix)
 	if(!isSetRNG()){
 		this.setRNG();
 	}
-	
+
 	padLength =  padLength || 0;
-		
+
 	if(typeof secret !== 'string'){
 		throw new Error('Secret must be a string.');
 	}
@@ -2560,7 +2560,7 @@ exports.share = function(secret, numShares, threshold, padLength, withoutPrefix)
 	}
 	if(numShares > config.max){
 		var neededBits = Math.ceil(Math.log(numShares +1)/Math.LN2);
-		throw new Error('Number of shares must be an integer between 2 and 2^bits-1 (' + config.max + '), inclusive. To create ' + numShares + ' shares, use at least ' + neededBits + ' bits.')	
+		throw new Error('Number of shares must be an integer between 2 and 2^bits-1 (' + config.max + '), inclusive. To create ' + numShares + ' shares, use at least ' + neededBits + ' bits.')
 	}
 	if(typeof threshold !== 'number' || threshold%1 !== 0 || threshold < 2){
 		throw new Error('Threshold number of shares must be an integer between 2 and 2^bits-1 (' + config.max + '), inclusive.');
@@ -2572,13 +2572,13 @@ exports.share = function(secret, numShares, threshold, padLength, withoutPrefix)
 	if(typeof padLength !== 'number' || padLength%1 !== 0 ){
 		throw new Error('Zero-pad length must be an integer greater than 1.');
 	}
-	
+
 	if(config.unsafePRNG){
 		warn();
 	}
-	
+
 	secret = '1' + hex2bin(secret); // append a 1 so that we can preserve the correct number of leading zeros in our secret
-	secret = split(secret, padLength);	
+	secret = split(secret, padLength);
 	var x = new Array(numShares), y = new Array(numShares);
 	for(var i=0, len = secret.length; i<len; i++){
 		var subShares = this._getShares(secret[i], numShares, threshold);
@@ -2597,19 +2597,19 @@ exports.share = function(secret, numShares, threshold, padLength, withoutPrefix)
 			x[i] = config.bits.toString(36).toUpperCase() + padLeft(x[i],padding) + bin2hex(y[i]);
 		}
 	}
-	
+
 	return x;
 };
 
-// This is the basic polynomial generation and evaluation function 
+// This is the basic polynomial generation and evaluation function
 // for a `config.bits`-length secret (NOT an arbitrary length)
-// Note: no error-checking at this stage! If `secrets` is NOT 
+// Note: no error-checking at this stage! If `secrets` is NOT
 // a NUMBER less than 2^bits-1, the output will be incorrect!
 /** @expose **/
-exports._getShares = function(secret, numShares, threshold){	
+exports._getShares = function(secret, numShares, threshold){
 	var shares = [];
-	var coeffs = [secret]; 
-		
+	var coeffs = [secret];
+
 	for(var i=1; i<threshold; i++){
 		coeffs[i] = parseInt(config.rng(config.bits),2);
 	}
@@ -2621,16 +2621,16 @@ exports._getShares = function(secret, numShares, threshold){
 	}
 	return shares;
 };
-	
+
 // Polynomial evaluation at `x` using Horner's Method
 // TODO: this can possibly be sped up using other methods
-// NOTE: fx=fx * x + coeff[i] ->  exp(log(fx) + log(x)) + coeff[i], 
+// NOTE: fx=fx * x + coeff[i] ->  exp(log(fx) + log(x)) + coeff[i],
 //       so if fx===0, just set fx to coeff[i] because
 //       using the exp/log form will result in incorrect value
 function horner(x, coeffs){
 	var logx = config.logs[x];
 	var fx = 0;
-	for(var i=coeffs.length-1; i>=0; i--){	
+	for(var i=coeffs.length-1; i>=0; i--){
 		if(fx === 0){
 			fx = coeffs[i];
 			continue;
@@ -2650,15 +2650,15 @@ function inArray(arr,val){
 };
 
 function processShare(share){
-	
+
 	var bits = parseInt(share[0], 36);
 	if(bits && (typeof bits !== 'number' || bits%1 !== 0 || bits<defaults.minBits || bits>defaults.maxBits)){
 		throw new Error('Number of bits must be an integer between ' + defaults.minBits + ' and ' + defaults.maxBits + ', inclusive.')
 	}
-	
+
 	var max = Math.pow(2, bits) - 1;
 	var idLength = max.toString(config.radix).length;
-	
+
 	var id = parseInt(share.substr(1, idLength), config.radix);
 	if(typeof id !== 'number' || id%1 !== 0 || id<1 || id>max){
 		throw new Error('Share id must be an integer between 1 and ' + config.max + ', inclusive.');
@@ -2680,11 +2680,11 @@ exports._processShare = processShare;
 // Protected method that evaluates the Lagrange interpolation
 // polynomial at x=`at` for individual config.bits-length
 // segments of each share in the `shares` Array.
-// Each share is expressed in base `inputRadix`. The output 
+// Each share is expressed in base `inputRadix`. The output
 // is expressed in base `outputRadix'
 function combine(at, shares){
-	var setBits, share, x = [], y = [], result = '', idx;	
-	
+	var setBits, share, x = [], y = [], result = '', idx;
+
 	for(var i=0, len = shares.length; i<len; i++){
 		share = processShare(shares[i]);
 		if(typeof setBits === 'undefined'){
@@ -2692,15 +2692,15 @@ function combine(at, shares){
 		}else if(share['bits'] !== setBits){
 			throw new Error('Mismatched shares: Different bit settings.')
 		}
-		
+
 		if(config.bits !== setBits){
 			init(setBits);
 		}
-		
+
 		if(inArray(x, share['id'])){ // repeated x value?
 			continue;
 		}
-	
+
 		idx = x.push(share['id']) - 1;
 		share = split(hex2bin(share['value']));
 		for(var j=0, len2 = share.length; j<len2; j++){
@@ -2708,7 +2708,7 @@ function combine(at, shares){
 			y[j][idx] = share[j];
 		}
 	}
-	
+
 	for(var i=0, len=y.length; i<len; i++){
 		result = padLeft(lagrange(at, x, y[i]).toString(2)) + result;
 	}
@@ -2732,12 +2732,12 @@ exports.combine = function(shares){
 /** @expose **/
 exports.newShare = function(id, shares){
 	if(typeof id === 'string'){
-		id = parseInt(id, config.radix);	
+		id = parseInt(id, config.radix);
 	}
-	
+
 	var share = processShare(shares[0]);
 	var max = Math.pow(2, share['bits']) - 1;
-	
+
 	if(typeof id !== 'number' || id%1 !== 0 || id<1 || id>max){
 		throw new Error('Share id must be an integer between 1 and ' + config.max + ', inclusive.');
 	}
@@ -2745,30 +2745,30 @@ exports.newShare = function(id, shares){
 	var padding = max.toString(config.radix).length;
 	return config.bits.toString(36).toUpperCase() + padLeft(id.toString(config.radix), padding) + combine(id, shares);
 };
-	
+
 // Evaluate the Lagrange interpolation polynomial at x = `at`
 // using x and y Arrays that are of the same length, with
 // corresponding elements constituting points on the polynomial.
 function lagrange(at, x, y){
 	var sum = 0,
-		product, 
+		product,
 		i, j;
-		
+
 	for(var i=0, len = x.length; i<len; i++){
 		if(!y[i]){
-			continue; 
+			continue;
 		}
-			
+
 		product = config.logs[y[i]];
 		for(var j=0; j<len; j++){
 			if(i === j){ continue; }
 			if(at === x[j]){ // happens when computing a share that is in the list of shares used to compute it
 				product = -1; // fix for a zero product term, after which the sum should be sum^0 = sum, not sum^1
-				break; 
+				break;
 			}
 			product = ( product + config.logs[at ^ x[j]] - config.logs[x[i] ^ x[j]] + config.max/* to make sure it's not negative */ ) % config.max;
 		}
-			
+
 		sum = product === -1 ? sum : sum ^ config.exps[product]; // though exps[-1]= undefined and undefined ^ anything = anything in chrome, this behavior may not hold everywhere, so do the check
 	}
 	return sum;
@@ -2777,10 +2777,10 @@ function lagrange(at, x, y){
 /** @expose **/
 exports._lagrange = lagrange;
 
-// Splits a number string `bits`-length segments, after first 
+// Splits a number string `bits`-length segments, after first
 // optionally zero-padding it to a length that is a multiple of `padLength.
 // Returns array of integers (each less than 2^bits-1), with each element
-// representing a `bits`-length segment of the input string from right to left, 
+// representing a `bits`-length segment of the input string from right to left,
 // i.e. parts[0] represents the right-most `bits`-length segment of the input string.
 function split(str, padLength){
 	if(padLength){
@@ -2789,11 +2789,11 @@ function split(str, padLength){
 	var parts = [];
 	for(var i=str.length; i>config.bits; i-=config.bits){
 		parts.push(parseInt(str.slice(i-config.bits, i), 2));
-	}	
-	parts.push(parseInt(str.slice(0, i), 2));	
+	}
+	parts.push(parseInt(str.slice(0, i), 2));
 	return parts;
 };
-	
+
 // Pads a string `str` with zeros on the left so that its length is a multiple of `bits`
 function padLeft(str, bits){
 	bits = bits || config.bits
@@ -2825,9 +2825,9 @@ function bin2hex(str){
 	}
 	return hex;
 }
-	
-// Converts a given UTF16 character string to the HEX representation. 
-// Each character of the input string is represented by 
+
+// Converts a given UTF16 character string to the HEX representation.
+// Each character of the input string is represented by
 // `bytesPerChar` bytes in the output string.
 /** @expose **/
 exports.str2hex = function(str, bytesPerChar){
@@ -2835,11 +2835,11 @@ exports.str2hex = function(str, bytesPerChar){
 		throw new Error('Input must be a character string.');
 	}
 	bytesPerChar = bytesPerChar || defaults.bytesPerChar;
-	
+
 	if(typeof bytesPerChar !== 'number' || bytesPerChar%1 !== 0 || bytesPerChar<1 || bytesPerChar > defaults.maxBytesPerChar){
 		throw new Error('Bytes per character must be an integer between 1 and ' + defaults.maxBytesPerChar + ', inclusive.')
 	}
-	
+
 	var hexChars = 2*bytesPerChar;
 	var max = Math.pow(16, hexChars) - 1;
 	var out = '', num;
@@ -2856,19 +2856,19 @@ exports.str2hex = function(str, bytesPerChar){
 	}
 	return out;
 };
-	
-// Converts a given HEX number string to a UTF16 character string. 
+
+// Converts a given HEX number string to a UTF16 character string.
 /** @expose **/
 exports.hex2str = function(str, bytesPerChar){
 	if(typeof str !== 'string'){
 		throw new Error('Input must be a hexadecimal string.');
 	}
 	bytesPerChar = bytesPerChar || defaults.bytesPerChar;
-	
+
 	if(typeof bytesPerChar !== 'number' || bytesPerChar%1 !== 0 || bytesPerChar<1 || bytesPerChar > defaults.maxBytesPerChar){
 		throw new Error('Bytes per character must be an integer between 1 and ' + defaults.maxBytesPerChar + ', inclusive.')
 	}
-	
+
 	var hexChars = 2*bytesPerChar;
 	var out = '';
 	str = padLeft(str, hexChars);
@@ -2877,7 +2877,7 @@ exports.hex2str = function(str, bytesPerChar){
 	}
 	return out;
 };
-	
+
 // by default, initialize without an RNG
 exports.init();
 })(typeof module !== 'undefined' && module['exports'] ? module['exports'] : (window['secrets'] = {}), typeof GLOBAL !== 'undefined' ? GLOBAL : window );
@@ -2885,7 +2885,7 @@ exports.init();
 	<script type="text/javascript">
 /*!
 * Basic JavaScript BN library - subset useful for RSA encryption. v1.3
-* 
+*
 * Copyright (c) 2005  Tom Wu
 * All Rights Reserved.
 * BSD License
@@ -4166,7 +4166,7 @@ exports.init();
 // Licensed under the MIT license:
 //   http://www.opensource.org/licenses/mit-license.php
 //
-// The word "QR Code" is registered trademark of 
+// The word "QR Code" is registered trademark of
 // DENSO WAVE INCORPORATED
 //   http://www.denso-wave.com/qrcode/faqpatent-e.html
 //
@@ -4380,7 +4380,7 @@ exports.init();
 			var data = (this.errorCorrectLevel << 3) | maskPattern;
 			var bits = QRCode.Util.getBCHTypeInfo(data);
 
-			// vertical		
+			// vertical
 			for (var i = 0; i < 15; i++) {
 
 				var mod = (!test && ((bits >> i) & 1) == 1);
@@ -5063,7 +5063,7 @@ exports.init();
 	[2, 35, 17],
 	[2, 35, 13],
 
-	// 4		
+	// 4
 	[1, 100, 80],
 	[2, 50, 32],
 	[2, 50, 24],
@@ -5081,7 +5081,7 @@ exports.init();
 	[4, 43, 19],
 	[4, 43, 15],
 
-	// 7		
+	// 7
 	[2, 98, 78],
 	[4, 49, 31],
 	[2, 32, 14, 4, 33, 15],
@@ -5099,7 +5099,7 @@ exports.init();
 	[4, 36, 16, 4, 37, 17],
 	[4, 36, 12, 4, 37, 13],
 
-	// 10		
+	// 10
 	[2, 86, 68, 2, 87, 69],
 	[4, 69, 43, 1, 70, 44],
 	[6, 43, 19, 2, 44, 20],
@@ -5478,7 +5478,7 @@ Bitcoin.ECDSA = (function () {
 		* Parses a byte array containing a DER-encoded signature.
 		*
 		* This function will return an object of the form:
-		* 
+		*
 		* {
 		*   r: BigInteger,
 		*   s: BigInteger
@@ -5729,7 +5729,7 @@ Bitcoin.ECKey = (function () {
 			} else if (ECKey.isBase64Format(input)) {
 				bytes = Crypto.util.base64ToBytes(input);
 			}
-			
+
 			if (ECKey.isBase6Format(input)) {
 				this.priv = new BigInteger(input, 6);
 			} else if (bytes == null || bytes.length != 32) {
@@ -5744,7 +5744,7 @@ Bitcoin.ECKey = (function () {
 		KeyPool.push(this);
 	};
 
-	ECKey.privateKeyPrefix = 0Xc6; // mainnet 0Xc6    testnet 0xf0
+	ECKey.privateKeyPrefix = 0xC6; // mainnet 0Xc6    testnet 0xf0
 
 	/**
 	* Whether public keys should be returned compressed by default.
@@ -5830,7 +5830,7 @@ Bitcoin.ECKey = (function () {
 		return this;
 	};
 
-	// Sipa Private Key Wallet Import Format 
+	// Sipa Private Key Wallet Import Format
 	ECKey.prototype.getBitcoinWalletImportFormat = function () {
 		var bytes = this.getBitcoinPrivateKeyByteArray();
 		if (bytes == null) return "";
@@ -5842,12 +5842,12 @@ Bitcoin.ECKey = (function () {
 		return privWif;
 	};
 
-	// Private Key Hex Format 
+	// Private Key Hex Format
 	ECKey.prototype.getBitcoinHexFormat = function () {
 		return Crypto.util.bytesToHex(this.getBitcoinPrivateKeyByteArray()).toString().toUpperCase();
 	};
 
-	// Private Key Base64 Format 
+	// Private Key Base64 Format
 	ECKey.prototype.getBitcoinBase64Format = function () {
 		return Crypto.util.bytesToBase64(this.getBitcoinPrivateKeyByteArray());
 	};
@@ -5856,7 +5856,7 @@ Bitcoin.ECKey = (function () {
 		if (this.priv == null) return null;
 		// Get a copy of private key as a byte array
 		var bytes = this.priv.toByteArrayUnsigned();
-		// zero pad if private key is less than 32 bytes 
+		// zero pad if private key is less than 32 bytes
 		while (bytes.length < 32) bytes.unshift(0x00);
 		return bytes;
 	};
@@ -5933,16 +5933,16 @@ Bitcoin.ECKey = (function () {
 	// 51 characters base58, always starts with a '7'
 	ECKey.isWalletImportFormat = function (key) {
 		key = key.toString();
-		return (ECKey.privateKeyPrefix == 0xc6) ?
-							(/^5[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key)) :
+		return (ECKey.privateKeyPrefix == 0xC6) ?
+							(/^7[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key)) :
 							(/^9[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key));
 	};
 
 	// 52 characters base58
 	ECKey.isCompressedWalletImportFormat = function (key) {
 		key = key.toString();
-		return (ECKey.privateKeyPrefix == 0xc6) ?
-							(/^A[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
+		return (ECKey.privateKeyPrefix == 0xC6) ?
+							(/^G[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
 							(/^c[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key));
 	};
 
@@ -6092,17 +6092,17 @@ Bitcoin.Util = {
 	<script type="text/javascript">
 /*
 * Copyright (c) 2010-2011 Intalio Pte, All Rights Reserved
-* 
+*
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
 * in the Software without restriction, including without limitation the rights
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 * copies of the Software, and to permit persons to whom the Software is
 * furnished to do so, subject to the following conditions:
-* 
+*
 * The above copyright notice and this permission notice shall be included in
 * all copies or substantial portions of the Software.
-* 
+*
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -6122,7 +6122,7 @@ Bitcoin.Util = {
 	* N = Cpu cost
 	* r = Memory cost
 	* p = parallelization cost
-	* 
+	*
 	*/
 	window.Crypto_scrypt = function (passwd, salt, N, r, p, dkLen, callback) {
 		if (N == 0 || (N & (N - 1)) != 0) throw Error("N must be > 0 and a power of 2");
@@ -6438,16 +6438,16 @@ input[type=checkbox] { position: relative; z-index: 20; }
 
 #main { position: relative; text-align: center; margin: 0px auto; width: 1008px; }
 #logo { width: 78px; height: 80px; }
-		
+
 #paperarea { min-height: 120px; display: none; }
 #paperarea .keyarea { border: 2px solid #0077ba; border-top: 0; }
 #paperarea .keyarea.art { display: block; height: auto; border: 0; font-family: Ubuntu, Arial; padding: 0; margin: 0; }
 #paperarea .artwallet .papersvg { width: 486px; height: 261px; border: 0; margin: 0; padding: 0; left: 0; }
-#paperarea .artwallet .qrcode_public { top: 52px; left: 17px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF; 
-		                                padding: 5px 5px 2px 5px; } 
-#paperarea .artwallet .qrcode_private { top: 104px; left: 360px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF; 
+#paperarea .artwallet .qrcode_public { top: 52px; left: 17px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF;
 		                                padding: 5px 5px 2px 5px; }
-#paperarea .artwallet .btcaddress  
+#paperarea .artwallet .qrcode_private { top: 104px; left: 360px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF;
+		                                padding: 5px 5px 2px 5px; }
+#paperarea .artwallet .btcaddress
 {
 	position: absolute; top: 240px; left: 139px; z-index: 100; font-size: 10px; background-color: transparent;
 	font-weight:bold; color: #000000; margin: 0;
@@ -6456,11 +6456,11 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		-ms-transform-origin:top left;     -ms-transform:rotate(-90deg);
 		-o-transform-origin:top left;      -o-transform:rotate(-90deg);
 		transform-origin:top left;         transform:rotate(-90deg);
-} 
-#paperarea .artwallet .btcprivwif  
+}
+#paperarea .artwallet .btcprivwif
 {
 	position: absolute; top: 236px; left: 346px; z-index: 100; font-size: 7px; background-color: transparent;
-	font-weight:bold; color: #000000; margin: 0;  
+	font-weight:bold; color: #000000; margin: 0;
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-90deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-90deg);
 		-ms-transform-origin:top left;     -ms-transform:rotate(-90deg);
@@ -6470,7 +6470,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #paperarea .artwallet .btcencryptedkey
 {
 	position: absolute; top: 174px; left: 332px; z-index: 100; font-size: 8px; background-color: transparent;
-	font-weight:bold; color: #000000; margin: 0;  
+	font-weight:bold; color: #000000; margin: 0;
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-90deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-90deg);
 		-ms-transform-origin:top left;     -ms-transform:rotate(-90deg);
@@ -6486,10 +6486,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #detailarea .notes { text-align: left; font-size: 80%; padding: 0 0 20px 0; }
 #detailarea .pubqr .item .label { text-decoration: none; }
 #detailarea .pubqr .item { float: left; margin: 10px 0; position: relative; }
-#detailarea .pubqr .item.right { float: right; position: relative; top: 0; } 
+#detailarea .pubqr .item.right { float: right; position: relative; top: 0; }
 #detailarea .privqr .item .label { text-decoration: none; }
 #detailarea .privqr .item { float: left; margin: 0; position: relative; }
-#detailarea .privqr .item.right { float: right; position: relative; } 
+#detailarea .privqr .item.right { float: right; position: relative; }
 #detailarea .item { margin: 10px 0; position: relative; font-size: 90%; padding: 1px 0; }
 #detailarea .item.clear { clear: both; padding-top: 10px; }
 #detailarea .label { display: block; font-weight: bold; }
@@ -6532,44 +6532,44 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #busyblock.busy { display: block; }
 .hide { display: none; }
 .show { display: block; }
-	
+
 /* IE8 */
 .qrcodetable { border-width: 0px; border-style: none; border-color: #0000ff; border-collapse: collapse; }
 .qrcodetddark { border-width: 0px; border-style: none; border-color: #0000ff; border-collapse: collapse; padding: 0; margin: 0; width: 2px; height: 2px; background-color: #000000; }
 .qrcodetdlight { border-width: 0px; border-style: none; border-color: #0000ff; border-collapse: collapse; padding: 0; margin: 0; width: 2px; height: 2px; background-color: #ffffff; }
-		
-@media screen 	
+
+@media screen
 {
 	#tagline { margin: 0 0 15px 0; font-style: italic; }
-	.menu  
+	.menu
 	{
 	    text-align: left; margin: 0; padding: 0; display: block;
 	    color: #fff;
 	    background-color: #0077ba; /* # 009900 # 53c100 */
 	    border-top-left-radius: 5px; border-top-right-radius: 5px;
 	}
-	.menu .tab 
+	.menu .tab
 	{
 	    position: relative; display: inline-block; border: 0px solid red;
-	    margin: 0; list-style: none; z-index: 110; cursor: pointer; 
+	    margin: 0; list-style: none; z-index: 110; cursor: pointer;
 	    top: 1px; padding: 10px 20px; width: 212px; text-align: center;
 	}
-	.menu .tab.selected  
+	.menu .tab.selected
 	{
-	    cursor: default; 
+	    cursor: default;
 	    color: #000;
-	    background-color: #FFF; margin: 6px 16px; padding: 4px; border-radius: 5px; 
+	    background-color: #FFF; margin: 6px 16px; padding: 4px; border-radius: 5px;
 	}
-	.menu .tab:hover  
+	.menu .tab:hover
 	{
 	    color: #000;
-	    background-color: #FFF; margin: 6px 16px; padding: 4px; border-radius: 5px; 
+	    background-color: #FFF; margin: 6px 16px; padding: 4px; border-radius: 5px;
 	}
 	.menu .tab.selected:hover { color: #000; }
-	
+
     .pagebreak { height: 50px; }
 	.commands { border-bottom: 2px solid #0077ba;  padding: 10px 2px; margin-bottom: 0; }
-	.commands .row { padding: 0 0; text-align: left; } 
+	.commands .row { padding: 0 0; text-align: left; }
 	.commands .row.extra { padding-top: 6px; }
 	.commands span { padding: 0 10px; }
 	.commands span.print { float: right; position: relative; z-index: 20; }
@@ -6596,9 +6596,9 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	#detailcommands .button { position: relative; z-index: 20; }
 	#detailbip38encryptspan { display: none; }
 	.paper .commands { border: 2px solid #0077ba; }
-	#bulkstartindex, #paperlimit, #paperlimitperpage { width: 35px; } 
+	#bulkstartindex, #paperlimit, #paperlimitperpage { width: 35px; }
 	#bulklimit { width: 45px; }
-			
+
 	.footer { font-size: 90%; clear: both; width: 770px; padding: 10px 0 10px 0; margin: 50px auto auto auto; }
 	.footer div span.item { padding: 10px; }
 	.footer .authorbtc { float: left; width: 470px; }
@@ -6670,7 +6670,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			<li class="tab" id="splitwallet" onclick="ninja.tab.select(this);">Split Wallet
 			<li class="tab" id="detailwallet" onclick="ninja.tab.select(this);">Wallet Details
 		</ul>
-		
+
 		<div id="generate">
 			<span id="generatelabelbitcoinaddress">Generating Aither Address...</span><br />
 			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br />
@@ -6736,7 +6736,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				</div>
 				<div id="paperkeyarea"></div>
 			</div>
-			
+
 			<div id="bulkarea" class="walletarea">
 				<div class="commands">
 					<div id="bulkcommands" class="row">
@@ -6752,14 +6752,14 @@ input[type=checkbox] { position: relative; z-index: 20; }
 					<textarea rows="20" cols="88" id="bulktextarea"></textarea>
 				</div>
 				<div class="faqs">
-					<div id="bulkfaq1" class="faq"> 
+					<div id="bulkfaq1" class="faq">
 						<div id="bulkq1" class="question" onclick="ninja.wallets.bulkwallet.openCloseFaq(1);">
 							<span id="bulklabelq1">Why should I use a Bulk Wallet to accept Aither on my website?</span>
 							<div id="bulke1" class="more"></div>
 						</div>
 						<div id="bulka1" class="answer">The traditional approach to accepting Aither on your website requires that you install the official Aither client daemon ("aitherd"). Many website hosting packages don't support installing the Aither daemon. Also, running the Aither daemon on your web server means your private keys are hosted on the server and could get stolen if your web server is hacked. When using a Bulk Wallet you can upload only the Aither addresses and not the private keys to your web server. Then you don't have to worry about your Aither wallet being stolen if your web server is hacked. </div>
 					</div>
-					<div id="bulkfaq2" class="faq"> 
+					<div id="bulkfaq2" class="faq">
 						<div id="bulkq2" class="question" onclick="ninja.wallets.bulkwallet.openCloseFaq(2);">
 							<span id="bulklabelq2">How do I use a Bulk Wallet to accept Aither on my website?</span>
 							<div id="bulke2" class="more"></div>
@@ -6776,7 +6776,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 					</div>
 				</div>
 			</div>
-			
+
 			<div id="brainarea" class="walletarea">
 				<div id="braincommands" class="commands">
 					<div class="row">
@@ -6810,10 +6810,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 					</div>
 				</div>
 			</div>
-			
+
 			<div id="vanityarea" class="walletarea">
 				<div id="vanitystep1label" class="commands expandable" onclick="ninja.wallets.vanitywallet.openCloseStep(1);">
-					<span><label id="vanitylabelstep1">Step 1 - Generate your "Step1 Key Pair"</label> <input type="button" id="vanitynewkeypair" 
+					<span><label id="vanitylabelstep1">Step 1 - Generate your "Step1 Key Pair"</label> <input type="button" id="vanitynewkeypair"
 						value="Generate" onclick="ninja.wallets.vanitywallet.generateKeyPair();" /></span>
 					<div id="vanitystep1icon" class="more"></div>
 				</div>
@@ -6856,7 +6856,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						<span class="output" id="vanityaddress"></span>
 						<br /><div class="notes" id="vanitylabelnotesbitcoinaddress">The above is your new address that should include your required prefix.</div>
 					</div>
-					
+
 					<div>
 						<span class="label" id="vanitylabelpublickeyhex">Vanity Public Key (HEX):</span>
 						<span class="output pubkeyhex" id="vanitypublickeyhex"></span>
@@ -6898,12 +6898,12 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				</div>
 			</div>
 
-			<div id="detailarea" class="walletarea">	
+			<div id="detailarea" class="walletarea">
 				<div id="detailcommands" class="commands">
 					<span><label id="detaillabelenterprivatekey" for="detailprivkey">Enter Private Key</label></span>
 					<input type="text" id="detailprivkey" value="" onfocus="this.select();" onkeypress="if (event.keyCode == 13) ninja.wallets.detailwallet.viewDetails();" />
 					<span><input type="button" class="button" id="detailview" value="View Details" onclick="ninja.wallets.detailwallet.viewDetails();" /></span>
-					
+
 					<div id="detailbip38toggle">
 						<span><label id="detaillabelencrypt" for="detailencrypt">BIP38 Encrypt?</label> <input type="checkbox" id="detailbip38checkbox" onchange="ninja.wallets.detailwallet.toggleEncrypt(this);" /></span>
 					</div>
@@ -6928,7 +6928,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 							<span class="label" id="detaillabelbitcoinaddress">Aither Address</span>
 							<div id="detailqrcodepublic" class="qrcode_public"></div>
 							<span class="output" id="detailaddress"></span>
-						</div>					
+						</div>
 						<div class="item right">
 							<span class="label" id="detaillabelbitcoinaddresscomp">Aither Address Compressed</span>
 							<div id="detailqrcodepubliccomp" class="qrcode_public"></div>
@@ -6981,7 +6981,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 					</div>
 				</div>
 				<div class="faqs">
-					<div id="detailfaq1" class="faq"> 
+					<div id="detailfaq1" class="faq">
 						<div id="detailq1" class="question" onclick="ninja.wallets.detailwallet.openCloseFaq(1);">
 							<span id="detaillabelq1">How do I make a wallet using dice? What is B6?</span>
 							<div id="detaile1" class="more"></div>
@@ -7031,7 +7031,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				<div class="tooltip" id="statuskeypoolgood">
 					<span id="statuslabelkeypool1">This is a log of all the Aither Addresses and Private Keys you generated during your current session. Reloading the page will create a new session.</span>
 					<textarea rows="20" cols="102" id="keypooltextarea"></textarea>
-					
+
 					<br /><br />
 					<input type="button" value="Refresh" class="button" id="statuskeypoolrefresh" onclick="ninja.status.showKeyPool();" />
 					<input type="button" value="OK" class="button" id="statusokkeypool" onclick="document.getElementById('statuskeypoolgood').style.display = 'none';" />
@@ -7116,7 +7116,7 @@ ninja.privateKey = {
 			callback(new Error(ninja.translator.get("detailalertnotvalidprivatekey")));
 			return;
 		}
-		// first byte is always 0x01 
+		// first byte is always 0x01
 		else if (hex[0] != 0x01) {
 			callback(new Error(ninja.translator.get("detailalertnotvalidprivatekey")));
 			return;
@@ -7145,7 +7145,7 @@ ninja.privateKey = {
 				return;
 			}
 		}
-		// second byte for EC-multiplied key 
+		// second byte for EC-multiplied key
 		else if (hex[1] == 0x43) {
 			isECMult = true;
 			isCompPoint = (hex[2] & 0x20) != 0;
@@ -7582,7 +7582,7 @@ ninja.publicKey = {
 			return canvas;
 		},
 
-		// generate a QRCode and return it's representation as an Html table 
+		// generate a QRCode and return it's representation as an Html table
 		createTableHtml: function (text) {
 			var typeNumber = qrC.getTypeNumber(text);
 			var qr = new QRCode(typeNumber, QRCode.ErrorCorrectLevel.H);
@@ -7605,7 +7605,7 @@ ninja.publicKey = {
 		},
 
 		// show QRCodes with canvas OR table (IE8)
-		// parameter: keyValuePair 
+		// parameter: keyValuePair
 		// example: { "id1": "string1", "id2": "string2"}
 		//		"id1" is the id of a div element where you want a QRCode inserted.
 		//		"string1" is the string you want encoded into the QRCode.
@@ -7705,7 +7705,7 @@ ninja.tab = {
                 document.getElementById(wType).className = "tab";
                 ninja.wallets[wType].close();
             }
-            
+
             // don't open tab if entropy still being collected
             // exceptions: brainwallet detailwallet
             if (ninja.seeder.isStillSeeding == false || walletType == "brainwallet" || walletType == "detailwallet") {
@@ -8036,18 +8036,18 @@ ninja.translator = {
 			"detailalertnotvalidprivatekey": "Le texte que vous avez entré n'est pas une Clé Privée valide",
 			"detailconfirmsha256": "Le texte que vous avez entré n'est pas une Clé Privée valide!\n\nVoulez-vous utiliser le texte comme un mot de passe et créer une Clé Privée à partir d'un hash SHA256 de ce mot de passe?\n\nAttention: Choisir un mot de passe solide est important pour vous protéger des attaques bruteforce visant à trouver votre mot de passe et voler vos Aither.",
 			"bip38alertincorrectpassphrase": "Incorrect passphrase for this encrypted private key.", //TODO: please translate
-			"bip38alertpassphraserequired": "Mot de passe a inventé pour crypter en BIP38", 
+			"bip38alertpassphraserequired": "Mot de passe a inventé pour crypter en BIP38",
 			"vanityinvalidinputcouldnotcombinekeys": "Entrée non valide. Impossible de combiner les clés.",
 			"vanityalertinvalidinputpublickeysmatch": "Entrée non valide. La clé publique des deux entrées est identique. Vous devez entrer deux clés différentes.",
 			"vanityalertinvalidinputcannotmultiple": "Entrée non valide. Il n'est pas possible de multiplier deux clés publiques. Sélectionner 'Ajouter' pour ajouter deux clés publiques pour obtenir une adresse Aither.",
 			"vanityprivatekeyonlyavailable": "Seulement disponible si vos combinez deux clés privées",
 			"vanityalertinvalidinputprivatekeysmatch": "Entrée non valide. La clé Privée des deux entrées est identique. Vous devez entrer deux clés différentes.",
-			
+
 			// header and menu html
 			"tagline": "Générateur De Porte-Monnaie Aither Javascript Hors-Ligne",
 			"generatelabelbitcoinaddress": "Création de l'adresse Aither...",
 			"generatelabelmovemouse": "BOUGEZ votre souris pour ajouter de l'entropie...",
-			"generatelabelkeypress": "OU veuillez taper des caractères aléatoires dans le rectangle blanc suivant", 
+			"generatelabelkeypress": "OU veuillez taper des caractères aléatoires dans le rectangle blanc suivant",
 			"singlewallet": "Porte-Monnaie Simple",
 			"paperwallet": "Porte-Monnaie Papier",
 			"bulkwallet": "Porte-Monnaie En Vrac",
@@ -8055,7 +8055,7 @@ ninja.translator = {
 			"vanitywallet": "Porte-Monnaie Vanité",
 			"splitwallet": "Split Wallet", //TODO: please translate
 			"detailwallet": "Détails du Porte-Monnaie",
-			
+
 			// footer html
 			"footerlabeldonations": "Dons:",
 			"footerlabeltranslatedby": "Traduction: 1Gy7NYSJNUYqUdXTBow5d7bCUEJkUFDFSq",
@@ -8131,7 +8131,7 @@ ninja.translator = {
 			"bulklabela2li3": "Ajoutez une option dans votre panier en ligne pour que vos clients puissent vous payer en Aither. Quand un client choisi de vous payer en Aither, vous pouvez afficher une des adresses de votre base de donnée comme \"adresse de paiment\" pour votre client et sauvegarder cette adresse avec sa commande.",
 			"bulklabela2li4": "Vous avez maintenant besoin d'être avisé quand le paiement est reçu. Cherchez \"Aither payment notification\" sur Google et inscrivez-vous à un service de notification de paiement Aither. Il y a plusieurs services qui vous avertiront via des services Web, API, SMS, Email, etc. Une fois que vous avez reçu la notification, qui devrait être programmée automatiquement, vous pouvez traiter la commande de votre client. Pour vérifier manuellement si un paiement est arrivé, vous pouvez utiliser Block Explorer. Remplacez ADRESSE par l'adresse Aither que vous souhaitez vérifier. La confirmation de la transaction pourrait prendre de 10 à 60 minutes pour être confirmée.<br />http://explorer.aither.org/address/ADRESSE<br /><br />Les transactions non confirmées peuvent être visualisées ici: https://bchain.info/Aither/ or http://insight.aither.siampm.com/ <br />Vous devriez voir la transaction à l'intérieur de 30 secondes.",
 			"bulklabela2li5": "Les Aither vos s'accumuler de façon sécuritaire dans la chaîne de blocs. Utilisez le porte-monnaie original que vous avez généré à l'étape 1 pour les dépenser.",
-			
+
 			// brain wallet html
 			"brainlabelenterpassphrase": "Entrez votre mot de passe: ",
 			"brainlabelshow": "Afficher?",
@@ -8163,7 +8163,7 @@ ninja.translator = {
 			"vanitylabelnotespublickeyhex": "Celle-ci est la Clé Publique dans le format hexadécimal. ",
 			"vanitylabelprivatekey": "Clé Privée Vanité (WIF):",
 			"vanitylabelnotesprivatekey": "Celle-ci est la Clé Privée pour accéder à votre porte-monnaie. ",
-			
+
 			// detail wallet html
 			"detaillabelenterprivatekey": "Entrez la Clé Privée",
 			"detailkeyformats": "Key Formats: WIF, WIFC, HEX, B64, B6, MINI, BIP38",
@@ -8296,7 +8296,7 @@ ninja.translator = {
 			"bulklabela2li3": "Παρέχετε στο καλάθι αγορών σας μια επιλογή για πληρωμή σε Aither. Όταν ο πελάτης επιλέγει να πληρώσει με Aither, θα εμφανίσετε σε αυτόν μια από τις διευθύνσεις από τη βάση δεδομένων, ως την «προσωπική του διεύθυνση πληρωμής» την οποία θα αποθηκεύσετε μαζί με την εντολή αγοράς.",
 			"bulklabela2li4": "Τώρα χρειάζεται να ειδοποιηθείτε μόλις γίνει η πληρωμή. Ψάξτε στο Google για «Aither payment notification» κι εγγραφείτε σε τουλάχιστο μία υπηρεσία ειδοποίησης πληρωμής. Υπάρχουν διάφορες υπηρεσίες που θα σας ειδοποιήσουν με Web υπηρεσίες, API, SMS, Email, κλπ. Όταν λάβετε την ειδοποίηση, η οποία μπορεί να αυτοματοποιηθεί προγραμματιστικά, εκτελείτε την εντολή του πελάτη. Για να ελέγξετε χειροκίνητα την πληρωμή μπορείτε να χρησιμοποιήσετε τον Block Explorer. Αντικαταστήστε το THEADDRESSGOESHERE με τη Aither διεύθυνσή σας. Η επιβεβαίωση της πληρωμής ενδέχεται να διαρκέσει από δέκα λεπτά έως μία ώρα.<br />http://explorer.aither.org/address/THEADDRESSGOESHERE<br /><br />Μπορείτε να δείτε τις συναλλαγές που δεν έχουν επιβεβαιωθεί στο: https://bchain.info/Aither/ or http://insight.aither.siampm.com/ <br />Θα πρέπει να δείτε τη συναλλαγή εκεί εντός 30 δευτερολέπτων.",
 			"bulklabela2li5": "Τα Aither θα συσσωρεύονται με ασφάλεια στην αλυσίδα των μπλοκ. Χρησιμοποιήστε το αρχικό πορτοφόλι που δημιουργήσατε στο βήμα 1 για να τα ξοδέψετε.",
-			
+
 			// brain wallet html
 			"brainlabelenterpassphrase": "Εισάγετε κωδικό: ",
 			"brainlabelshow": "Εμφάνιση;",
@@ -8306,7 +8306,7 @@ ninja.translator = {
 			"brainalgorithm": "Αλγόριθμος: SHA256(κωδικός)",
 			"brainlabelbitcoinaddress": "Διεύθυνση Aither:",
 			"brainlabelprivatekey": "Προσωπικό Κλειδί (Μορφή εισαγωγής σε πορτοφόλι):",
-			
+
 			// vanity wallet html
 			"vanitylabelstep1": "Βήμα 1 - Δημιουργήστε το «Ζεύγος κλειδιών του Βήματος 1»",
 			"vanitynewkeypair": "Δημιουργία",
@@ -8328,7 +8328,7 @@ ninja.translator = {
 			"vanitylabelnotespublickeyhex": "Παραπάνω είναι το Δημόσιο Κλειδί σε δεκαεξαδική μορφή. ",
 			"vanitylabelprivatekey": "Vanity Προσωπικό Κλειδί (WIF):",
 			"vanitylabelnotesprivatekey": "Παραπάνω είναι το Προσωπικό Κλειδί που θα φορτώσετε στο Πορτοφόλι σας. ",
-			
+
 			// detail wallet html
 			"detaillabelenterprivatekey": "Εισάγετε το Προσωπικό Κλειδί",
 			"detailkeyformats": "Key Formats: WIF, WIFC, HEX, B64, B6, MINI, BIP38",
@@ -8493,7 +8493,7 @@ ninja.translator = {
 			"vanitylabelnotespublickeyhex": "Quella sopra è la Chiave Pubblica nel formato esadecimale. ",
 			"vanitylabelprivatekey": "Chiave privata del Vanity Wallet (WIF):",
 			"vanitylabelnotesprivatekey": "Quella sopra è la Chiave Privata nel formato esadecimale.  ",
-			
+
 			// detail wallet html
 			"detaillabelenterprivatekey": "Inserisci la Chiave Privata",
 			"detailkeyformats": "Key Formats: WIF, WIFC, HEX, B64, B6, MINI, BIP38",
@@ -8517,7 +8517,7 @@ ninja.translator = {
 			"detaillabelq1": "How do I make a wallet using dice? What is B6?", //TODO: please translate
 			"detaila1": "An important part of creating a Aither wallet is ensuring the random numbers used to create the wallet are truly random. Physical randomness is better than computer generated pseudo-randomness. The easiest way to generate physical randomness is with dice. To create a Aither private key you only need one six sided die which you roll 99 times. Stopping each time to record the value of the die. When recording the values follow these rules: 1=1, 2=2, 3=3, 4=4, 5=5, 6=0. By doing this you are recording the big random number, your private key, in B6 or base 6 format. You can then enter the 99 character base 6 private key into the text field above and click View Details. You will then see the Aither address associated with your private key. You should also make note of your private key in WIF format since it is more widely used." //TODO: please translate
 	    },
-	    
+
 	    "de": {
 			// javascript alerts or messages
 			"testneteditionactivated": "TESTNET AKTIVIERT",
@@ -8661,7 +8661,7 @@ ninja.translator = {
 
 			// detail wallet html
 			"detaillabelenterprivatekey": "Privaten Schl&uuml;ssel eingeben:",
-			"detailkeyformats": "Unterstützte Formate: WIF, WIFC, HEX, B64, B6, MINI, BIP38",	
+			"detailkeyformats": "Unterstützte Formate: WIF, WIFC, HEX, B64, B6, MINI, BIP38",
 			"detailview": "Details anzeigen",
 			"detailprint": "Drucken",
 			"detaillabelnote1": "Der private Schl&uuml;ssel deines Wallets ist eine geheime, einzigartige Zeichenfolge, die nur du kennst. Er kann auf mehrer Arten dargestellt werden. Unten findest du die zugeh&ouml;rige Aither-Adresse bzw. &ouml;ffentlichen Schl&uuml;ssel sowie den privaten Schl&uuml;ssel in den verbreitetsten Formaten.",
@@ -8847,7 +8847,7 @@ ninja.translator = {
 			"detaillabelq1": "Jak si mohu vytvořit peněženku pomocí hrací kostky? Co je to B6?",
 			"detaila1": "Důležitá součást vytváření Aither peněženky je jistota, že náhodná čísla použitá pro její tvorbu jsou opravdu náhodná. Fyzická náhoda je lepší než počítačem generovaná pseudonáhoda. Pomocí hrací kostky je možné jednoduše získat fyzicky náhodná čísla. Pro vytvoření soukromého klíče potřebujete pouze šestihrannou kostku, kterou 99x hodíte. Každý tento hod zaznamenejte. Při zapisování převeďte čísla takto: 1=1, 2=2, 3=3, 4=4, 5=5, 6=0. Pomocí této techniky zapisujete velké, opravdu náhodné číslo, svůj soukromý klíč v B6 nebo také base 6 formátu. Těchto 99 čísel napište do pole výše a klikněte na Zobrazit detail. Poté se vám zobrazí Aither adresa přidružená k tomuto soukromému klíči. Soukromý klíč byste si měli zaznamenat také ve WIF formátu, který je široce používán."
 		},
-		
+
 		"hu": {  // 02-MAR-2014 16:57
 			// javascript alerts or messages
 			"testneteditionactivated": "TESTNET KIADÁS AKTIVÁLVA",
@@ -9019,7 +9019,7 @@ ninja.translator = {
 			"detaila1": "Egy Aither pénztárca előállításakor nagyon fontos, hogy a felhasznált véletlen számok valóban véletlenek legyenek. A fizikai véletlen jobb, mint a számítógéppel előállított pszeudo-véletlen. Fizikai véletlen a legegyszerűbben egy dobókockával állítható elő. Ha szeretne egy Aither privát címet előállítani, akkor csupán egy dobókockára van szüksége, mellyel 99-szer kell dobni. Jegyezze fel minden egyes dobása eredményét. Az eredmények feljegyzésekor a következő szabályokat kövesse: 1->1, 2->2, 3->3, 4->4, 5->5, 6->0. Ha így tesz, akkor a privát kulcshoz tartozó véletlen számot B6 formátumban, vagyis 6-os számrendszerben rögzíti. Írja be ezt a 99 karakterből álló 6-os számrendszerbeli privát kulcsot a fenti szövegmezőbe, majd nyomja meg a 'Részletek megjelenítése' gombot. Ekkor megjelenik az a Aither cím, amely ehhez a privát kulcshoz tartozik. Érdemes felírni a WIF formátumú privát kulcsot is, mivel ezt szélesebb körben használják."
 		},
 
-		"jp": {	
+		"jp": {
 			// javascript alerts or messages
 			"testneteditionactivated": "テストネット版が有効になりました。",
 			"paperlabelbitcoinaddress": "Aitherアドレス",
@@ -9204,7 +9204,7 @@ ninja.translator = {
 			"detailalertnotvalidprivatekey": "O texto que você digitou não é uma chave privada válida",
 			"detailconfirmsha256": "O texto que você digitou não é uma chave privada válida\n\nQuer usar esse texto como se fosse uma senha e gerar uma chave privada usando um hash SHA256 dessa senha?\n\nAviso: É importante escolher uma senha forte para evitar ataques de força bruta que tentem adivinhá-la e roubar seus Aither.",
 			"bip38alertincorrectpassphrase": "Senha incorreta para essa chave privada criptografada.",
-			"bip38alertpassphraserequired": "Senha necessária para a chave BIP38", 
+			"bip38alertpassphraserequired": "Senha necessária para a chave BIP38",
 			"vanityinvalidinputcouldnotcombinekeys": "Entrada inválida. Não foi possível combinar as chaves.",
 			"vanityalertinvalidinputpublickeysmatch": "Entrada inválida. As chaves públicas de ambas entradas são iguais. Você deve inserir duas chaves diferentes.",
 			"vanityalertinvalidinputcannotmultiple": "Entrada inválida. Não é possível multiplicar duas chaves públicas. Clique em 'Somar' para somar duas chaves públicas para adquirir um endereço Aither.",
@@ -9356,7 +9356,7 @@ ninja.translator = {
 			"detaila1": "Uma parte importante ao criar um carteira Aither é se assegurar que os números aleatórios usados para criar a carteira sejam realmente aleatórios. A aleatoriedade física é melhor do que a pseudo-aleatoriedade gerada por computador. A maneira mais fácil de gerar aleatoriedade física é com dados. Para criar um chave privada Aither você precisa de apenas um dado de seis lados, o qual você jogará 99 vezes. A cada jogada, anote o valor do dado. Ao anotar os valores, siga as seguintes regras: 1=1, 2=2, 3=3, 4=4, 5=5, 6=0. Ao fazer isso, você está anotando esse grande número aleatório, sua chave privada, no formato base 6 (B6). Você pode então digitar essa chave privada em base 6 contendo 99 caracteres no campo de texto acima e clicar em Ver Detalhes. Você então verá o endereço Aither associado com sua chave privada. Você deve também anotar sua chave privada no formato WIF, já que ele é mais amplamente utilizado."
 		},
 
-		"zh-cn": {	
+		"zh-cn": {
 			// javascript alerts or messages
 			"testneteditionactivated": "TESTNET EDITION ACTIVATED",
 			"paperlabelbitcoinaddress": "世币地址",
@@ -10079,8 +10079,8 @@ ninja.wallets.bulkwallet = {
 			bulkWallet.csv.push((bulkWallet.csvRowLimit - bulkWallet.csvRowsRemaining + bulkWallet.csvStartIndex)
 								+ ",\"" + key.getBitcoinAddress() + "\",\"" + key.toString("wif")
 			//+	"\",\"" + key.toString("wifcomp")    // uncomment these lines to add different private key formats to the CSV
-			//+ "\",\"" + key.getBitcoinHexFormat() 
-			//+ "\",\"" + key.toString("base64") 
+			//+ "\",\"" + key.getBitcoinHexFormat()
+			//+ "\",\"" + key.toString("base64")
 								+ "\"");
 
 			document.getElementById("bulktextarea").value = ninja.translator.get("bulkgeneratingaddresses") + bulkWallet.csvRowsRemaining;
@@ -10237,7 +10237,7 @@ ninja.wallets.vanitywallet = {
 				privateKeyWif = ninja.translator.get("vanityprivatekeyonlyavailable");
 				var pubKeyHex = (ninja.publicKey.isPublicKeyHexFormat(input1KeyString)) ? input1KeyString : input2KeyString;
 				var ecKey = (ninja.privateKey.isPrivateKey(input1KeyString)) ? new Bitcoin.ECKey(input1KeyString) : new Bitcoin.ECKey(input2KeyString);
-				// add 
+				// add
 				if (document.getElementById("vanityradioadd").checked) {
 					var pubKeyCombined = ninja.publicKey.getByteArrayFromAdding(pubKeyHex, ecKey.getPubKeyHex());
 				}
@@ -10472,7 +10472,7 @@ ninja.wallets.vanitywallet = {
 				document.getElementById("detailprivwif").innerHTML = wif;
 				btcKey.setCompressed(true);
 				var bitcoinAddressComp = btcKey.getBitcoinAddress();
-				var wifComp = btcKey.getBitcoinWalletImportFormat();			
+				var wifComp = btcKey.getBitcoinWalletImportFormat();
 				document.getElementById("detailpubkeycomp").innerHTML = btcKey.getPubKeyHex();
 				document.getElementById("detailaddresscomp").innerHTML = bitcoinAddressComp;
 				document.getElementById("detailprivwifcomp").innerHTML = wifComp;
@@ -11193,10 +11193,10 @@ ninja.wallets.splitwallet = {
 			//   1 share in a safety deposit box ("Box")
 			//   1 share at Home
 			//   1 share at Work
-			// Threshold of 2 can be redeemed in these permutations 
-			//   Home + Box 
-			//   Work + Box 
-			//   Home + Work 
+			// Threshold of 2 can be redeemed in these permutations
+			//   Home + Box
+			//   Work + Box
+			//   Home + Work
 			testSplitAndCombinePrivateKey2of3: function () {
 				// lowercase hex key
 				var key = "0004d30da67214fa65a41a6493576944c7ea86713b14db437446c7a8df8e13da"; //5HpJ4bpHFEMWYwCidjtZHwM2rsMh4PRfmZKV8Y21i7msiUkQKUW
@@ -11240,7 +11240,7 @@ ninja.wallets.splitwallet = {
 			//   3 shares with good friend Angie
 			//   3 shares with good friend Fred
 			//   3 shares with Self at home or office
-			// Threshold of 7 can be redeemed in these permutations 
+			// Threshold of 7 can be redeemed in these permutations
 			//   Self + Box (no trust to spend your coins but your friends are backing up your shares)
 			//   Angie + Box (Angie will send btc to executor of your will)
 			//   Fred + Box (if Angie hasn't already then Fred will send btc to executor of your will)
@@ -11264,7 +11264,7 @@ ninja.wallets.splitwallet = {
 			testCombinePrivateKeyFromXofYShares: function () {
 				var key = "5K9nHKqbwc1xXpa6wV5p3AaCnubvxQDBukKaFkq7ThAkxgMTMEh";
 				// these are 4 of 6 shares
-				var shares = ["3XxjMASmrkk6eXMM9kAJA7qiqViNVBfiwA1GQDLvg4PVScL", "3Y2DkcPuNX8VKZwpnDdxw55wJtcnCvv2nALqe8nBLViHvck", 
+				var shares = ["3XxjMASmrkk6eXMM9kAJA7qiqViNVBfiwA1GQDLvg4PVScL", "3Y2DkcPuNX8VKZwpnDdxw55wJtcnCvv2nALqe8nBLViHvck",
 					"3Y6qv7kyGwgRBKVHVbUNtzmLYAZWQtTPztPwR8wc7uf4MXR", "3YD4TowZn6jw5ss8U89vrcPHonFW4vSs9VKq8MupV5kevG4"]
 				secrets.setRNG();
 				secrets.init(7);
@@ -11286,7 +11286,7 @@ ninja.wallets.splitwallet = {
 				var btcKeyUncompressed = new Bitcoin.ECKey(keyUncompressed);
 				var btcKeyCompressed = new Bitcoin.ECKey(keyCompressed);
 				var pool = Bitcoin.KeyPool.getArray();
-				
+
 				if (pool.length != 2
 					|| pool[0].getBitcoinWalletImportFormat() != keyUncompressed
 					|| pool[1].getBitcoinWalletImportFormat() != keyCompressed
@@ -11307,7 +11307,7 @@ ninja.wallets.splitwallet = {
 				var btcKeyUncompressed2 = new Bitcoin.ECKey(keyUncompressed);
 				var btcKeyHex = new Bitcoin.ECKey(keyHex);
 				var pool = Bitcoin.KeyPool.getArray();
-				
+
 				if (pool.length != 2
 					|| pool[0].getBitcoinWalletImportFormat() != keyUncompressed
 					|| pool[1].getBitcoinWalletImportFormat() != keyCompressed
